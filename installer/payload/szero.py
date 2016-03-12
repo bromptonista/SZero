@@ -17,7 +17,7 @@
 #Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 # This code hosted on Github thanks to Ben Nuttall who taught me how to be a git(ter)
-Version = 'v0.01.00'  #12Mar16  Start - simply ignore any commands starting with GPIO
+Version = 'v0.00.01'  #12Mar16  Start - simple copy of ScratchGPIO 8 Dev
 print "Version:",Version
 import threading
 import socket

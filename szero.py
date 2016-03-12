@@ -1,6 +1,6 @@
 #!/usr/bin/env python
-# ScratchGPIO - control Raspberry Pi GPIO ports using Scratch.
-# Copyright (C) 2013-2016 by Simon Walters based on original code for PiFace by Thomas Preston
+# SZero - enhance control of Raspberry Pi GPIO ports using Scratch.
+# Copyright (C) 2016 by Simon Walters based on original code for PiFace by Thomas Preston
 
 # This program is free software; you can redistribute it and/or
 # modify it under the terms of the GNU General Public License
@@ -17,7 +17,7 @@
 #Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 # This code hosted on Github thanks to Ben Nuttall who taught me how to be a git(ter)
-Version = 'v8.0.0001'  #22Jan16  Improvesments to H-Bridge syntax
+Version = 'v0.00.01'  #12Mar16  Start - simple copy of ScratchGPIO 8 Dev
 print "Version:",Version
 import threading
 import socket

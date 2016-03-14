@@ -17,7 +17,7 @@
 #Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
 # This code hosted on Github thanks to Ben Nuttall who taught me how to be a git(ter)
-Version = 'v0.01.00'  #12Mar16  Start - simply ignore any commands starting with GPIO
+Version = 'v0.01.01'  #12Mar16  Add in servo support using gpio numbering
 print "Version:",Version
 import threading
 import socket
@@ -3340,14 +3340,22 @@ class ScratchListener(threading.Thread):
                             #print self.dataraw
                             
                         # end of motor checking
-
-                        if self.bFindValue('servo'):
+                        if self.bFindValue('servogpio'):
+                            print "servogpio"
+                            for pin in sghGC.validPins:
+                                gpiopin = sghGC.gpioLookup[pin]
+                                if self.vFindValue('servogpio' + str(gpiopin)):
+                                    svalue = int(self.valueNumeric) if self.valueIsNumeric else -150
+                                    svalue = (svalue + 150)
+                                    sghGC.pinServod(pin, svalue)     
+                        elif self.bFindValue('servo'):
                             print "servo"
                             for pin in sghGC.validPins:
                                 if self.vFindValue('servo' + str(pin)):
                                     svalue = int(self.valueNumeric) if self.valueIsNumeric else -150
                                     svalue = (svalue + 150)
                                     sghGC.pinServod(pin, svalue)
+                               
 
 
                     #Use bit pattern to control ports
